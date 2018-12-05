@@ -9,12 +9,14 @@ describe "songs", type:  :feature do
   end
 
   it "lists songs in 'Artist Name - Song Title' format" do
+    #binding.pry
     visit songs_path
     expect(page).to have_link("Daft Punk - The Grid", href: song_path(@song))
   end
 
   it "links to the artist" do
     visit song_path(@song)
+  #  binding.pry
     expect(page).to have_link("Daft Punk", href: artist_path(@artist))
   end
 end
